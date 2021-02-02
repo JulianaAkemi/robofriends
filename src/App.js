@@ -9,7 +9,7 @@ class App extends Component {
     super()
     this.state = {
       robots: robots,
-      sarchfield: ""
+      searchfield: ""
     }
   }
 
@@ -18,15 +18,14 @@ class App extends Component {
   }
 
   render() {
-    const filteredRobots = this.state.robots.filter(robots =>{
-      
+    const filteredRobots = this.state.robots.filter(robots =>{ 
       return robots.name.toLocaleLowerCase().includes(this.state.searchfield.toLocaleLowerCase())
     })
 
     return (
       <div className="tc">
         <h1>RoboFriends</h1>
-        <SearchBox searchChange = {this.onSeachChange} />
+        <SearchBox searchChange = {this.onSearchChange} />
         <CardList robots = {filteredRobots} /> 
       </div>
     )
